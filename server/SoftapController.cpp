@@ -63,6 +63,8 @@ int SoftapController::startSoftap() {
 	check_wifi_chip_type_string(type);
 	if (!strncmp(type, "AP", 2)) {
 		strcpy(hostapd_name, HOSTAPD_BIN_FILE);
+        } else if (!strncmp(type, "RK", 2)) {
+                strcpy(hostapd_name, HOSTAPD_BIN_FILE);
 	} else if (!strncmp(type, "RTL", 3)) {
 		strcpy(hostapd_name, HOSTAPD_RTL_BIN_FILE);
 	} else {
